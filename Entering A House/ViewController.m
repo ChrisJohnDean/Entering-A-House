@@ -16,6 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Front Door"
+                                   style:UIBarButtonItemStylePlain
+                                   target:self
+                                   action:@selector(goBack)];
+    
+    self.navigationItem.rightBarButtonItem = backButton;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -25,5 +33,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)goBack {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+}
 
 @end
